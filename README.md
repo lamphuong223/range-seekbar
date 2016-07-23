@@ -3,8 +3,6 @@ RangeSeekBar
 
 A slider widget for Android allowing to set a minimum and maximum value on a numerical range.
 
-![RangeSeekBar](https://raw.github.com/lamphuong223/range-seekbar/master/screenshot/s1.png)
-
 Download
 ------
 - Add it in your root `build.gradle` at the end of repositories:
