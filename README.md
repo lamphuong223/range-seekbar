@@ -19,7 +19,7 @@ allprojects {
 - Add the dependency in your module-level `build.gradle`
 ```groovy
 dependencies {
-    compile 'com.github.lamphuong223:range-seekbar:1.0'
+    compile 'com.github.lamphuong223:range-seekbar:1.0.1'
 }
 ```
 Usage
@@ -64,7 +64,7 @@ seekBar.setOnRangeBarChangeListener(new RangeSeekBar.OnRangeSeekBarChangerListen
 License
 -------
 
-    Copyright 2014 - 2016 lamphuong223
+    Copyright 2016 lamphuong223
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
