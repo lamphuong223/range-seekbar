@@ -14,8 +14,8 @@ public class Thumb {
     Paint paint;
     boolean isPressed;
     boolean isAnimating;
-    int normalRadius = 12;
-    int pressedRadius = 14;
+    int normalRadius;
+    int pressedRadius;
     private long startTime;
     private Paint ripplePaint;
     private DecelerateInterpolator interpolator;
@@ -76,7 +76,7 @@ public class Thumb {
     }
 
     public boolean isInTargetZone(float eventX, float eventY) {
-        return Math.abs(eventX - x) <= radius && Math.abs(eventY - y) <= radius;
+        return Math.abs(eventX - x) <= radius;
     }
 
 }

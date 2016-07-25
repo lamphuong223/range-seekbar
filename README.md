@@ -3,6 +3,8 @@ RangeSeekBar
 
 A slider widget for Android allowing to set a minimum and maximum value on a numerical range.
 
+![](https://raw.githubusercontent.com/lamphuong223/range-seekbar/master/screenshot/s1.png)
+
 Download
 ------
 - Add it in your root `build.gradle` at the end of repositories:
@@ -29,8 +31,8 @@ Usage
     android:layout_height="wrap_content"
     app:tick_count="20"
     app:thumb_color="@color/colorAccent"
-    app:thumb_radius="12"
-    app:thumb_pressed_radius="16"/>
+    app:thumb_normal_radius="6dp"
+    app:thumb_pressed_radius="8dp"/>
 ```
 ### Java code
 ```java
@@ -54,8 +56,8 @@ seekBar.setOnRangeBarChangeListener(new RangeSeekBar.OnRangeSeekBarChangerListen
 ```
 ### XML attributes 
             tick_count              format = interger   
-            thumb_radius            format=  interger
-            thumb_pressed_radius    format=  interger
+            thumb_normal_radius     format=  dimen
+            thumb_pressed_radius    format=  dimen
             left_index              format=  interger
             right_index             format=  interger
             thumb_color             format=  color

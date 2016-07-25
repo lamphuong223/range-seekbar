@@ -39,7 +39,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tick_count="20"
-        app:thumb_color="@color/colorPrimary"
-        app:thumb_radius="12"
-        app:thumb_pressed_radius="16"/>
+        app:thumb_color="@color/colorPrimary" />
 </LinearLayout>

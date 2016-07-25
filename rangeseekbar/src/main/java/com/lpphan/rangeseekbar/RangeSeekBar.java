@@ -1,6 +1,7 @@
 package com.lpphan.rangeseekbar;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -52,6 +54,7 @@ public class RangeSeekBar extends View {
 
     @SuppressWarnings("deprecation")
     private void init(Context context, AttributeSet attrs) {
+        Resources resources = getResources();
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.RangeSeekBar);
 
@@ -60,8 +63,8 @@ public class RangeSeekBar extends View {
             mRightIndex = mTickCount - 1;
 
             mThumbColor = typedArray.getColor(R.styleable.RangeSeekBar_thumb_color, getResources().getColor(R.color.thumb_default));
-            mThumbNormalRadius = typedArray.getInteger(R.styleable.RangeSeekBar_thumb_radius, 12);
-            mThumbPressedRadius = typedArray.getInteger(R.styleable.RangeSeekBar_thumb_pressed_radius, 16);
+            mThumbNormalRadius = typedArray.getDimensionPixelSize(R.styleable.RangeSeekBar_thumb_normal_radius, 12);
+            mThumbPressedRadius = typedArray.getDimensionPixelSize(R.styleable.RangeSeekBar_thumb_pressed_radius, 16);
             mLeftIndex = typedArray.getInteger(R.styleable.RangeSeekBar_left_index, 0);
             mRightIndex = typedArray.getInteger(R.styleable.RangeSeekBar_right_index, mRightIndex);
 
@@ -88,6 +91,10 @@ public class RangeSeekBar extends View {
         bar = new Bar(0, 0, 0, Color.BLACK, 1, mThumbColor, 3);
         bar.setTickNumb(mTickCount);
 
+    }
+
+    private float convertDimenToPixel(Resources resources,float value){
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,value,resources.getDisplayMetrics());
     }
 
 
