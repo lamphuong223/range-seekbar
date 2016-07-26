@@ -39,8 +39,8 @@ Usage
 RangeSeekBar seekBar = (RangeSeekBar) findViewById(R.id.seekBar);
 seekBar.setTickCount(20);
 seekBar.setThumbColor(Color.RED);
-seekBar.setThumbNormalRadius(12);
-seekBar.setThumbPressedRadius(16);
+seekBar.setThumbNormalRadius(6f);
+seekBar.setThumbPressedRadius(8f);
 seekBar.setLeftIndex(0);
 seekBar.setRightIndex(10);
 ```

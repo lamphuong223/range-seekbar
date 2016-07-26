@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.AttributeSet;
-import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -93,11 +92,6 @@ public class RangeSeekBar extends View {
 
     }
 
-    private float convertDimenToPixel(Resources resources,float value){
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,value,resources.getDisplayMetrics());
-    }
-
-
     public void setOnRangeBarChangeListener(OnRangeSeekBarChangerListener onRangeBarChangeListener) {
         mListener = onRangeBarChangeListener;
     }
@@ -128,10 +122,10 @@ public class RangeSeekBar extends View {
     /**
      * Set thumb's normal radius
      *
-     * @param thumbRadius Default is 12dp
+     * @param thumbRadius Default is 6dp
      */
-    public void setThumbNormalRadius(int thumbRadius) {
-        mThumbNormalRadius = thumbRadius;
+    public void setThumbNormalRadius(float thumbRadius) {
+        mThumbNormalRadius = (int) (thumbRadius*getResources().getDisplayMetrics().density);
         leftThumb.radius = mThumbNormalRadius;
         rightThumb.radius = mThumbNormalRadius;
         invalidate();
@@ -140,10 +134,10 @@ public class RangeSeekBar extends View {
     /**
      * Set thumb's pressed radius
      *
-     * @param thumbPressedRadius Default is 16dp
+     * @param thumbPressedRadius Default is 8dp
      */
-    public void setThumbPressedRadius(int thumbPressedRadius) {
-        mThumbPressedRadius = thumbPressedRadius;
+    public void setThumbPressedRadius(float thumbPressedRadius) {
+        mThumbPressedRadius = (int) (thumbPressedRadius*getResources().getDisplayMetrics().density);
         leftThumb.pressedRadius = mThumbPressedRadius;
         rightThumb.pressedRadius = mThumbPressedRadius;
         invalidate();
